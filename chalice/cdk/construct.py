@@ -3,18 +3,18 @@ import os
 import uuid
 from typing import List, Dict, Optional, Any
 
+import aws_cdk as cdk
 from aws_cdk import (
     aws_s3_assets as assets,
     cloudformation_include,
     aws_iam as iam,
     aws_lambda as lambda_,
-    core as cdk
 )
-
+from constructs import Construct
 from chalice import api
 
 
-class Chalice(cdk.Construct):
+class Chalice(Construct):
     """Chalice construct for CDK.
 
     Packages the application into AWS SAM format and imports the resulting
